@@ -39,7 +39,7 @@ public class ShipmentService {
         Optional<User> user = userRepository.findById(Long.parseLong(userId));
         AtomicReference<Shipment> shipment = new AtomicReference<>(shipmentRequest);
         user.ifPresent(customer -> {
-                shipmentRequest.setUser(user.get());
+                shipmentRequest.setUserId(user.get().getUserId());
             shipment.set(shipmentRepository.save(shipmentRequest));
         });
         return ResponseEntity.ok(shipment.get());
