@@ -1,5 +1,6 @@
 package com.myshipment.tracker.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
 
     @Id
