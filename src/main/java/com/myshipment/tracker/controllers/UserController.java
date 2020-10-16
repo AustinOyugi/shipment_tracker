@@ -1,5 +1,6 @@
 package com.myshipment.tracker.controllers;
 
+import com.myshipment.tracker.models.User;
 import com.myshipment.tracker.payloads.LoginRequest;
 import com.myshipment.tracker.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,8 @@ public class UserController {
         return userService.processLogin(loginRequest);
     }
 
+    @PostMapping("register")
+    private ResponseEntity<?> register(@RequestBody User user){
+        return userService.register(user);
+    }
 }
