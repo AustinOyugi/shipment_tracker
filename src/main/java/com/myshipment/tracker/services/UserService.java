@@ -36,4 +36,8 @@ public class UserService {
 
         return ResponseEntity.ok(optionalUser.get());
     }
+
+    public ResponseEntity<?> register(User user) {
+        return ResponseEntity.ok(userRepository.save(user));
+    }
 }
