@@ -15,6 +15,6 @@ import java.util.Optional;
 
 @Repository
 public interface ShipmentRepository extends CrudRepository<Shipment,Long> {
-    Optional<Shipment> findByUser(User user);
+    Optional<Shipment> findByUserId(Long userId);
     Optional<Shipment> findByTrackingNumber(String trackingNumber);
 }
