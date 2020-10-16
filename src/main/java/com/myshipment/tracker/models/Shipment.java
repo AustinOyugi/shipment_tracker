@@ -40,6 +40,5 @@ public class Shipment extends DateAudit {
     @ManyToOne
     private ShipmentTransaction shipmentTransaction;
 
-    @ManyToOne
-    private User user;
+    private Long userId;
 }
