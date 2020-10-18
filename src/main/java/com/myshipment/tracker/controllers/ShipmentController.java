@@ -40,4 +40,9 @@ public class ShipmentController {
     private ResponseEntity<?> getShipmentNumber(@RequestParam String userId){
         return shipmentService.getShipmentNumber(userId);
     }
+
+    @GetMapping("all_shipments")
+    private ResponseEntity<?> getAllShipment(@RequestParam String userName){
+        return shipmentService.getAllShipment(userName);
+    }
 }
