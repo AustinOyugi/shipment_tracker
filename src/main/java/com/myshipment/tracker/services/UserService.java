@@ -26,8 +26,7 @@ public class UserService {
     }
 
     public ResponseEntity<?> processLogin(LoginRequest loginRequest) {
-        Optional<User> optionalUser = userRepository.findByUserNameOrEmail(loginRequest.getUserNameOrEmail(),
-                loginRequest.getUserNameOrEmail());
+        Optional<User> optionalUser = userRepository.findByUserName(loginRequest.getUserNameOrEmail());
         if (!optionalUser.isPresent())
             return ResponseEntity.badRequest().body("User Not found");
 
