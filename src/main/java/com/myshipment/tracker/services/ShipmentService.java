@@ -63,4 +63,10 @@ public class ShipmentService {
 
         return ResponseEntity.badRequest().body("Error, User Not found");
     }
+
+    public ResponseEntity<?> getAllShipment(String userName) {
+        Optional<User> optionalUser = userRepository.findByUserName(userName);
+        return ResponseEntity.ok(
+                shipmentRepository.findAllByUserId(optionalUser.get().getUserId()));
+    }
 }
