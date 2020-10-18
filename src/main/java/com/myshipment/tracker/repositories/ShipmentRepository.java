@@ -5,6 +5,7 @@ import com.myshipment.tracker.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -15,6 +16,6 @@ import java.util.Optional;
 
 @Repository
 public interface ShipmentRepository extends CrudRepository<Shipment,Long> {
-    Optional<Shipment> findByUserId(Long userId);
+    List<Shipment> findAllByUserId(Long userId);
     Optional<Shipment> findByTrackingNumber(String trackingNumber);
 }
