@@ -37,7 +37,7 @@ public class Shipment extends DateAudit {
 
     private String address;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private ShipmentTransaction shipmentTransaction;
 
     private Long userId;
